@@ -3,7 +3,7 @@ use regex::Regex;
 use common::read_lines;
 
 fn main() {
-    let lines = read_lines("./data/day2.txt");
+    let lines = read_lines("./data/day2.txt").expect("failed to load data");
     let pt1_valid_count = lines.iter()
         .map(parse_line)
         .filter(filter_policy_part1)

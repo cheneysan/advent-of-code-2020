@@ -1,7 +1,7 @@
 use common::read_ints;
 
 fn main() {
-    let numbers = read_ints("./data/day1.txt");
+    let numbers = read_ints("./data/day1.txt").expect("failed to load data");
 
     for (i1, n1) in numbers.iter().enumerate() {
         for n2 in &numbers[i1 + 1..] {
