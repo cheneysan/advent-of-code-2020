@@ -28,7 +28,7 @@ fn parse_line(line: &String) -> (usize, usize, char, &str) {
     let caps = RE.captures(line).unwrap();
     let min: usize = caps.get(1).unwrap().as_str().parse().unwrap();
     let max: usize = caps.get(2).unwrap().as_str().parse().unwrap();
-    let letter: char = caps.get(3).unwrap().as_str().chars().nth(0).unwrap();
+    let letter: char = caps.get(3).unwrap().as_str().chars().next().unwrap();
     let password = caps.get(4).unwrap().as_str();
     (min, max, letter, password)
 }
