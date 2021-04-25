@@ -40,7 +40,7 @@ const VALIDATORS: [fn(&str) -> bool; 7] = [
         }
     },
     |v| {
-        v.starts_with("#") && v.len() == 7
+        v.starts_with('#') && v.len() == 7
     },
     |v| {
         VALID_EYE_COLORS.iter().any(|&ec| v == ec)
@@ -95,7 +95,7 @@ fn load_passports() -> Result<Vec<PassportData>, Error> {
 
         let mut iter_w = line.split_whitespace();
         while let Some(pair) = iter_w.next() {
-            let mut iter_c = pair.split(":");
+            let mut iter_c = pair.split(':');
             let key = iter_c.next().expect("missing key");
             let value = iter_c.next().expect("missing value");
             data.insert(String::from(key), String::from(value));
