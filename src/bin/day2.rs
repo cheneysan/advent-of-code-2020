@@ -20,7 +20,7 @@ fn main() {
 
 }
 
-4fn parse_line(line: &str) -> (usize, usize, char, &str) {
+fn parse_line(line: &str) -> (usize, usize, char, &str) {
     lazy_static! {
         static ref RE: Regex = Regex::new(r"^(\d+)-(\d+) (\w): (.*)$").unwrap();
     }
